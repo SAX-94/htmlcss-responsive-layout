@@ -54,6 +54,8 @@ header {
 header > .container {
     justify-content: space-between;
     align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 .logo {
@@ -216,7 +218,7 @@ background-color: var(--color-secondary-light);
     height: 210px;
 }
 
-.section:nth-child(1) h3 {
+.section:nth-child(1) h4 {
     color: var(--color-secondary);
     padding-bottom: 1rem;
 }
@@ -261,8 +263,19 @@ background-color: var(--color-secondary-light);
     font-size: 3rem;
 }
 
+/* ------ SECOND SECTION ------ */
 
+.section:nth-child(2) .row {
+    gap: 1rem;
+}
 
+[src="img/planning1.png"] {
+    width: 100%;
+}
+
+[src="img/planning2.png"] {
+    width: 50%;
+}
 
 
 

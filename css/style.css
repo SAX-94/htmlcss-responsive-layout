@@ -5,9 +5,9 @@
 }
 
 :root {
-    --color-prim: #9792e4;
-    --color-sec: #0084fd;
-    --color-sec-light: #b5ddff;
+    --color-primary: #9792e4;
+    --color-secondary: #0084fd;
+    --color-secondary-light: #b5ddff;
     
     --bp-sm: 576px;
     --bp-md: 768px;
@@ -47,7 +47,7 @@ body {
 /* --- HEADER AND NAV-BAR --- */
 
 header {
-    background-color: var(--color-sec);
+    background-color: var(--color-secondary);
     min-height: 70px;
 }
 
@@ -104,11 +104,11 @@ flex-basis: 0;
 }
 
 .col-1 {
-flex-basis: calc(100% / 3);
+flex-basis: calc((100% / 3) - 1rem);
 }
 
 .col-2 {
-flex-basis: calc((100% / 3) * 2);
+flex-basis: calc(((100% / 3) * 2) - 1rem);
 }
 
 .col-3 {
@@ -116,10 +116,11 @@ flex-basis: 100%;
 }
 
 .card {
+    padding: 1rem;
 /* SOLO PER DEBUG */
-background-color: red;
-border-radius: 1rem;
-min-height: 100px;
+    background-color: red;
+    border-radius: 1rem;
+    min-height: 100px;
 }
 
 .bg-primary {
@@ -181,9 +182,84 @@ background-color: var(--color-secondary-light);
 }
 }
 
+/* ------- MAIN ------- */
+
+/* ------ FIRST SECTION ------ */
+
+.section:nth-child(1) .container {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.section:nth-child(1) .row {
+    gap: 1rem;
+}
+
+.section:nth-child(1) .col-1,.col-2 {
+    height: calc(50% - 1rem);
+}
+
+.text-center {
+    text-align: center;
+}
+
+[src="img/phone.png"] {
+    max-width: 60%;
+}
+
+.demo-app {
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+}
+
+.section:nth-child(1) .card {
+    height: 210px;
+}
+
+.section:nth-child(1) h3 {
+    color: var(--color-secondary);
+    padding-bottom: 1rem;
+}
+
+.demo-app > p {
+    padding-bottom: 1.2rem;
+    line-height: 1.4rem;
+}
+
+.section:nth-child(1) p {
+    color: #5a6e7f;
+    font-size: 0.9rem;
+}
+
+.section:nth-child(1) i {
+    color: var(--color-secondary);
+    padding-bottom: 1rem;
+    font-size: 3rem;
+}
 
 
+.app-store {
+    display: inline-block;
+    color: white;
+    border-radius: 25px;
+    padding: 0.3rem 1.2rem;
+    height: 33px;
+}
 
+.fa-apple {
+    color: white !important;
+    font-size: 1rem !important;
+}
+
+.phone {
+    align-items: flex-end;
+    padding-bottom: -1rem;
+}
+
+
+.fa-file-code {
+    font-size: 3rem;
+}
 
 
 

@@ -516,8 +516,30 @@ p.text-center {
     color: white;
 }
 
-/* ------ FOOTER ------ */
+/* ------- FOOTER ------- */
 
 footer {
     background-color: #333333;
+    color: white;
+    font-size: 0.8rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 }
+
+footer .col-1 {
+    flex-wrap: wrap;
+}
+
+footer p {
+    padding-bottom: 3.5rem;
+    color: white !important;
+}
+
+footer span {
+    width: 100%;
+}
+
+footer span > u {
+    color: var(--color-primary);
+}
+

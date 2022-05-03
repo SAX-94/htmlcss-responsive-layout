@@ -27,9 +27,6 @@ body {
     margin: 0 auto;
     padding-left: 1rem;
     padding-right: 1rem;
-
-    /* SOLO PER DEBUG */
-    border: 1px dashed red;
     padding-top: 2rem;
     padding-bottom: 2rem;
 }
@@ -119,8 +116,6 @@ flex-basis: 100%;
 
 .card {
     padding: 1rem;
-/* SOLO PER DEBUG */
-    background-color: red;
     border-radius: 1rem;
     min-height: 100px;
 }

@@ -207,6 +207,7 @@ main .section:first-child {
 
 [src="img/phone.png"] {
     max-width: 60%;
+    margin-bottom: -1rem;
 }
 
 .demo-app {

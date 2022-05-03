@@ -466,6 +466,55 @@ p.text-center {
     right: 13%;
 }
 
+/* ------ SIXTH SECTION ------ */
+
+.section:nth-child(6) h4 {
+    color: #cfcef2;
+    padding-bottom: 0.7rem;
+}
+
+.section:nth-child(6) h1 {
+    color: #fdc15f;
+    padding-top: 1.2rem;
+    padding-bottom: 1rem;
+    font-size: 3.8rem
+}
+
+.section:nth-child(6) h2 {
+    font-size: 1.8rem;
+    color: white;
+}
+
+.section:nth-child(6) p {
+    padding-bottom: 1rem;
+    width: 100%;
+    color: white;
+    font-size: 0.8rem;
+}
+
+.section:nth-child(6) .card {
+    flex-wrap: wrap;
+}
+
+.get-started {
+    display: inline-block;
+    border-radius: 25px;
+    background-color: white;
+    color: var(--color-primary);
+    padding: 0.7rem 2.5rem;
+    margin-top: 0.9rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.4rem;
+    cursor: pointer;
+}
+
+.section:nth-child(6) span {
+    font-size: 0.8rem;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+}
 
 /* ------ FOOTER ------ */
 

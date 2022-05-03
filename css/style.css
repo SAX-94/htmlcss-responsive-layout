@@ -46,6 +46,10 @@ body {
 header {
     background-color: var(--color-secondary);
     min-height: 70px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
 }
 
 header > .container {
@@ -182,6 +186,10 @@ background-color: var(--color-secondary-light);
 /* ------- MAIN ------- */
 
 /* ------ FIRST SECTION ------ */
+
+main .section:first-child {
+    padding-top: 5rem;
+}
 
 .section:nth-child(1) .container {
     padding-left: 0;

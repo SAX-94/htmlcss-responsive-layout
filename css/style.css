@@ -1,550 +1,700 @@
+/**************************************************
+    GENERAL STYLES
+ **************************************************/
+
+:root {
+    /* Palette */
+    --primary-col: #0084fd;
+    --primary-col-light: #b5ddff;
+    --secondary-col: #9792e4;
+    --secondary-col-light: #d5d4f4;
+    /* Commons */
+    --text-col: #111;
+    --white-col: #fff;
+    --dark-gray: #333;
+}
+
+/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-:root {
-    --color-primary: #9792e4;
-    --color-secondary: #0084fd;
-    --color-secondary-light: #b5ddff;
-    
-    --bp-sm: 576px;
-    --bp-md: 768px;
-    --bp-lg: 992px;
+/*
+Smooth Scrolling
+https://www.w3schools.com/howto/howto_css_smooth_scroll.asp
+*/
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'PT Sans', sans-serif;
+    color: var(--text-col);
+    background: var(--white-col);
+}
+
+/* Evita che l'header vada a sovrapporsi ai
+contenuti delle section quando clicchiamo sui
+link interni con smooth scrolling. */
+section {
+    /* Altezza dell'header */
+    scroll-margin-top: 75px;
+}
+
+p {
+    line-height: 1.7;
+}
+
+img {
+    max-width: 100%;
+}
+
+/**********************************************************
+    UTILITIES
+ **********************************************************/
+
+/* LAYOUT */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .flex {
     display: flex;
 }
 
-.container {
-    width: 964px;
-    margin: 0 auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-}
-
-.container-p-medium {
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
-}
-
-.container-p-large {
-    padding-left: 4rem;
-    padding-right: 4rem;
-}
-
-/* --- HEADER AND NAV-BAR --- */
-
-header {
-    background-color: var(--color-secondary);
-    min-height: 70px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 30;
-}
-
-header > .container {
+.space-between {
     justify-content: space-between;
+}
+
+.align-center {
     align-items: center;
-    padding-top: 0;
-    padding-bottom: 0;
 }
 
-.logo {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-}
-
-ul {
-    list-style: none;
-}
-
-ul > li {
-    display: inline-block;
-    padding: 0.3rem 0.5rem;
-}
-
-.btn > a {
-    color: black;
-}
-
-a {
-    color: white;
-    text-decoration: none;
-}
-
-.btn {
-    background-color: #ffffff;
-    border-radius: 20px;
-}
-
-.section {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-}
-
-.row {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.justify-center {
-justify-content: center;
-}
-
-.col {
-flex-grow: 1;
-flex-basis: 0;
-}
-
-.col-1 {
-flex-basis: calc((100% / 3) - 1rem);
-}
-
-.col-2 {
-flex-basis: calc(((100% / 3) * 2) - 1rem);
-}
-
-.col-3 {
-flex-basis: 100%;
-}
-
-.card {
-    padding: 1rem;
-    border-radius: 1rem;
-    min-height: 100px;
-}
-
-.bg-primary {
-background-color: var(--color-primary);
-}
-
-.bg-secondary {
-background-color: var(--color-secondary);
-}
-
-.bg-secondary-light {
-background-color: var(--color-secondary-light);
-}
-
-@media screen and (max-width: 992px) {
-.container {
-    width: calc(var(--bp-md) - 2rem);
-}
-
-.col-lg-half {
-    flex-basis: 50%;
-}
-}
-
-@media screen and (max-width: 768px) {
-.container {
-    width: 534px;
-}
-
-.container-md-p-default {
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
-
-.col-md-half {
-    flex-basis: 50%;
-}
-
-.col-md-full {
-    flex-basis: 100%;
-}
-}
-
-@media screen and (max-width: 576px) {
-.container {
-    width: 100%;
-}
-.container-sm-p-default {
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
-
-.col-sm-half {
-    flex-basis: 50%;
-}
-
-.col-sm-full {
-    flex-basis: 100%;
-}
-}
-
-/* ------- MAIN ------- */
-
-/* ------ FIRST SECTION ------ */
-
-main .section:first-child {
-    padding-top: 5rem;
-}
-
-.section:nth-child(1) .container {
-    padding-left: 0;
-    padding-right: 0;
-}
-
-.section:nth-child(1) .row {
-    gap: 1rem;
-}
-
+/* TEXT */
 .text-center {
     text-align: center;
 }
 
-[src="img/phone.png"] {
-    max-width: 60%;
-    margin-bottom: -1rem;
+.white-text {
+    color: var(--white-col);
 }
 
-.demo-app {
-    padding-right: 1rem;
-    padding-bottom: 1rem;
+.accent-text {
+    color: var(--secondary-col);
 }
 
-.section:nth-child(1) .card {
-    height: 100%;
-}
-
-.section:nth-child(1) h4 {
-    color: var(--color-secondary);
-    padding-bottom: 1rem;
-}
-
-.demo-app > p {
-    padding-bottom: 1.2rem;
-    line-height: 1.4rem;
-}
-
-.section:nth-child(1) p {
-    color: #5a6e7f;
-    font-size: 0.9rem;
-}
-
-.section:nth-child(1) i {
-    color: var(--color-secondary);
-    padding-bottom: 1rem;
-    font-size: 3rem;
-}
-
-
-.app-store {
-    display: inline-block;
-    color: white;
-    border-radius: 25px;
-    padding: 0.3rem 1.2rem;
-    height: 33px;
-}
-
-.fa-apple {
-    color: white !important;
-    font-size: 1rem !important;
-}
-
-.phone {
-    align-items: flex-end;
-    padding-bottom: -1rem;
-}
-
-
-.fa-file-code {
-    font-size: 3rem;
-}
-
-/* ------ SECOND SECTION ------ */
-
-.section:nth-child(2) .container {
-    padding-left: 0;
-    padding-right: 0;
-}
-
-.section:nth-child(2) .row {
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    flex-shrink: 0;
-}
-
-.section:nth-child(2) .col {
-    flex-grow: 0;
-    flex-basis: calc((100% /3) - 1rem);
-}
-
-.plan2 > .card {
-    background-color: white;
-}
-
-.section:nth-child(2) h3 {
-    padding-bottom: 2rem;
-    padding-top: 4rem;
-}
-
-.section:nth-child(2) h4 {
-    padding-bottom: 1rem;
-    padding-top: 1rem;
-}
-
-.section:nth-child(2) p {
-    font-size: 0.9rem;
-}
-
-.plan2 {
-    align-self: flex-end;
-}
-
-[src="img/planning1.png"] {
-    width: 100%;
-}
-
-[src="img/planning2.png"] {
-    width: 50%;
-}
-
-.down-arrow {
-    aspect-ratio: 1;
-    border-radius: 50%;
-    font-size: 1.5rem;
-    height: 2rem;
-    margin: 1rem auto;
-}
-
-/* ------ THIRD SECTION ------ */
-
-.section:nth-child(3) .container {
-    padding-left: 0;
-    padding-right: 0;
-}
-
-h3.text-center {
-    color: var(--color-primary);
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    font-size: 1.5rem;
-}
-
-p.text-center {
-    color: black;
-}
-
-.testimonial {
-    min-height: 220px;
-    border-radius: 30px;
+.section-title {
+    font-size: 2.25rem;
     margin-bottom: 2rem;
-    align-items: center;
-    padding: 1rem;
-    margin-top: 1.5rem;
-    color: white;
 }
 
-.testimonial > p {
-    padding: 1rem;
-    color: white;
+/* BORDERS */
+.rounded {
+    border-radius: 20px;
 }
-
-.testimonial > h4 {
-    align-self: baseline;
+.rounded-big {
+    border-radius: 50px;
 }
-
-.pro-pic {
-    aspect-ratio: 1;
+.rounded-50 {
     border-radius: 50%;
-    width: 220px;
-    overflow: hidden;
-    position: relative;
 }
 
-.pro-pic img {
-    width: 160%;
+/* UI */
+.btn {
+    appearance: none;
+    display: inline-block;
+    text-decoration: none;
+    padding: 0.6rem 3rem 0.7rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--text-col);
+    background: var(--white-col);
+    border: none;
+    cursor: pointer;
+}
+.btn.small {
+    padding: 0.45rem 1rem;
+    font-weight: 400;
+    letter-spacing: 0;
+}
+/* Variations */
+.btn.big {
+    padding: 1.2rem 4.5rem 1.3rem;
+    font-size: 1.125rem;
+}
+.btn.small .btn-icon {
+    margin-right: 0.5rem;
+}
+.btn.primary {
+    background: var(--primary-col);
+    color: var(--white-col);
+}
+.btn.accent {
+    background: var(--secondary-col);
+    color: var(--white-col);
+}
+
+.card {
+    padding: 2rem;
+    color: var(--text-col);
+    background: var(--white-col);
+}
+
+
+/****************************************************
+    SITE SECTIONS
+ ****************************************************/
+
+/*
+HEADER
+*/
+.site-header {
+    /* https://www.w3schools.com/howto/howto_css_sticky_element.asp */
+    position: sticky;
+    top: 0px;
+    z-index: 10;
+    margin-bottom: 50px;
+    padding: 1rem 2rem;
+    background: var(--primary-col);
+}
+
+.site-header .hamburger {
+    font-size: 1.5rem;
+}
+
+.site-header .main-menu {
+    display: none;
+}
+
+/*
+INTRO SECTION
+*/
+#intro {
+    padding: 0 2rem;
+}
+
+#intro .card {
+    margin-bottom: 1.5rem;
+    color: rgba(0, 0, 0, 0.5);
+    background: var(--primary-col-light);
+}
+
+#intro .card:first-child {
+    padding-bottom: 0;
+}
+
+#intro .card .title,
+#intro .card .icon {
+    color: var(--primary-col);
+}
+
+#intro .card .icon {
+    margin-bottom: 1.5rem;
+    font-size: 5rem;
+}
+
+#intro .card .title {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+#intro .card .text {
+    font-weight: 600;
+}
+
+#intro .card .btn {
+    margin-top: 2rem;
+}
+
+#intro .card .image {
+    /* rimuove spazi dell'inline-block sul fondo */
+    display: block;
+    max-width: 250px;
+    margin-top: 2rem;
+}
+
+/*
+PLANNING SECTION
+*/
+#planning {
+    margin-top: 5rem;
+    padding: 4rem 2rem;
+    color: var(--white-col);
+    background: var(--secondary-col);
+}
+
+#planning .image {
+    display: block;
     margin: 0 auto;
-    position: absolute;
-    bottom: -5px;
-    right: -32%;
 }
 
-/* ------ FOURTH SECTION ------ */
+#planning .title {
+    margin: 5rem 0 3rem;
+    font-size: 2.125rem;
+}
 
-.section:nth-child(4) h3.text-center {
-    color: white;
+#planning .card {
+    margin-top: 2rem;
+    padding: 2rem 1rem;
+}
+
+#planning .card-title {
+    margin: 1rem 0;
     font-size: 1.5rem;
-    padding-bottom: 2.2rem;
+}
+#planning .card-text {
+    font-style: italic;
+    font-size: 1.125rem;
 }
 
-.section:nth-child(4) .row {
-    gap: 1rem;
-}
-
-.more {
-    display: inline-block;
-    border-radius: 25px;
-    margin-top: 1.5rem;
-    padding: 0.4rem 1.5rem;
-    color: white;
-    cursor: pointer;
-    text-align: center;
-}
-
-.section:nth-child(4) h1,h4 {
-    color: var(--color-primary);
-}
-
-.section:nth-child(4) h1 {
-    padding-bottom: 1rem;
-    font-size: 3.2rem;
-}
-
-.section:nth-child(4) h4 + p {
-    padding-top: 1rem;
-    font-size: 0.9rem;
-    line-height: 1.5rem;
-}
-
-.section:nth-child(4) .card {
-    background-color: white;
-    padding: 1.5rem;
-}
-
-/* ------ FIFTH SECTION ------ */
-
-.section:nth-child(5) h1 {
-    color: var(--color-primary);
-    margin-bottom: 2rem;
-    font-size: 2.6rem;
-}
-
-.section:nth-child(5) .card {
-    background-color: white;
-}
-
-.section:nth-child(5) .col-2 .card {
-    padding: 1.5rem;
-    line-height: 1.7rem;
-}
-
-.portrait {
+#planning .card .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    margin: 2rem auto 0;
+    background: var(--secondary-col);
     border-radius: 50%;
-    aspect-ratio: 1;
+    font-size: 1rem;
+}
+
+/*
+TESTIMONIALS SECTION
+*/
+#testimonials {
+    padding: 4rem 2rem 5rem;
+    font-size: 1.25rem;
+}
+#testimonials .pre-title {
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 1.125rem;
+}
+
+#testimonials .text {
+    margin-bottom: 3rem;
+}
+
+#testimonials .card {
+    margin-bottom: 2rem;
+    padding: 2rem 1rem;
+    color: var(--white-col);
+    background: var(--secondary-col);
+}
+
+#testimonials .card-image {
     width: 200px;
+    height: 200px;
     overflow: hidden;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto 1rem;
 }
-
-.portrait + h2 {
-    color: var(--color-primary);
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-}
-
-.portrait > img {
+#testimonials .card-image img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.find-me {
-    border-radius: 25px;
-    padding: 0.3rem 0.7rem;
-    color: white;
+#testimonials .card-text {
+    margin-bottom: 1.5rem;
+}
+#testimonials .card-text .icon {
+    font-size: 70px;
+    line-height: 0;
+    vertical-align: bottom;
 }
 
+#testimonials .name {
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
 
-.section:nth-child(5) .col-1 {
+/*
+BENEFITS SECTION
+*/
+#benefits {
+    margin-bottom: 5rem;
+    padding: 4rem 2rem 2rem;
+    background: var(--secondary-col);
+}
+
+#benefits .section-title {
+    margin-bottom: 4rem;
+}
+
+#benefits .card {
+    margin-bottom: 2rem;
+}
+
+#benefits .card-pre-title,
+#benefits .card-title {
+    margin-bottom: 1.25rem;
+}
+
+#benefits .card-pre-title {
+    font-size: 3rem;
+}
+
+#benefits .card-title {
+    font-size: 1.5rem;
+}
+
+#benefits .card-text {
+    margin-bottom: 1.5rem;
+    color: rgba(0, 0, 0, 0.55);
+}
+
+/*
+ABOUT SECTION
+*/
+#about {
+    padding: 0 2rem 5rem;
+}
+
+#about .section-title {
+    font-size: 3rem;
+}
+
+#about .text p {
+    margin-bottom: 3rem;
+    font-size: 1.125rem;
+    line-height: 2.2;
+}
+
+#about .quote-image {
     position: relative;
+    width: 180px;
+    margin-bottom: 1rem;
 }
-
-.section:nth-child(5) .fa-quote-left {
-    font-size: 4rem;
-    color: var(--color-primary);
+#about .quote-image .icon {
     position: absolute;
-    top: 5%;
-    right: 13%;
+    top: -1rem;
+    right: -1rem;
+    line-height: 1;
+    font-size: 14rem;
 }
-
-/* ------ SIXTH SECTION ------ */
-
-.section:nth-child(6) h4 {
-    color: #cfcef2;
-    padding-bottom: 0.7rem;
-}
-
-.section:nth-child(6) h1 {
-    color: #fdc15f;
-    padding-top: 1.2rem;
-    padding-bottom: 1rem;
-    font-size: 3.8rem
-}
-
-.section:nth-child(6) h2 {
-    font-size: 1.8rem;
-    color: white;
-}
-
-.section:nth-child(6) p {
-    padding-bottom: 1rem;
+#about .quote-image img {
     width: 100%;
-    color: white;
-    font-size: 0.8rem;
+    border-radius: 50%;
 }
 
-.section:nth-child(6) .card {
-    flex-wrap: wrap;
+#about .quote-text {
+    margin-bottom: 1.5rem;
+    font-size: 1.875rem;
 }
 
-.get-started {
-    display: inline-block;
-    border-radius: 25px;
-    background-color: white;
-    color: var(--color-primary);
-    padding: 0.7rem 2.5rem;
-    margin-top: 0.9rem;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 1.4rem;
-    cursor: pointer;
+/*
+BOTTOM BANNER SECTION
+*/
+#bottom-banner {
+    padding: 4rem 2rem;
+    background: var(--secondary-col);
 }
 
-.section:nth-child(6) span {
-    font-size: 0.8rem;
-    margin-left: auto;
-    margin-right: auto;
-    color: white;
+#bottom-banner .title-one {
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 1.125rem;
+    letter-spacing: 2px;
+    color: var(--secondary-col-light);
 }
 
-/* ------- FOOTER ------- */
-
-footer {
-    background-color: #333333;
-    color: white;
-    font-size: 0.8rem;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+#bottom-banner .title-two {
+    margin-bottom: 1.5rem;
+    font-size: 1.875rem;
 }
 
-footer .col-1 {
-    flex-wrap: wrap;
+#bottom-banner .title-three {
+    margin-bottom: 1.5rem;
+    font-size: 3.75rem;
+    color: #fdc15f
 }
 
-footer p {
-    padding-bottom: 3.5rem;
-    color: white !important;
+#bottom-banner .text {
+    max-width: 520px;
+    margin: 0 auto 2rem;
 }
 
-footer span {
-    width: 100%;
+#bottom-banner .btn {
+    color: var(--secondary-col);
 }
 
-footer span > u {
-    color: var(--color-primary);
+#bottom-banner .copy {
+    margin-top: 2rem;
+    font-size: 0.875rem;
 }
 
+/* FOOTER */
+.site-footer {
+    padding: 2.5rem 2rem;
+    font-size: 0.875rem;
+    background: var(--dark-gray);
+}
+
+.site-footer .contents {
+    max-width: 420px;
+    margin: 0 auto;
+}
+
+.site-footer .text-one {
+    margin-bottom: 4rem;
+}
+
+/*******************************************************
+    RESPONSIVE
+ *******************************************************/
+
+/* Tablet */
+@media all and (min-width: 768px) {
+    /* UTILITIES */
+    .container {
+        max-width: 750px;
+    }
+
+    .section-title {
+        font-size: 2.75rem;
+    }
+
+    .btn.big {
+        padding: 1.6rem 5rem 1.7rem;
+        font-size: 1.25rem;
+    }
+
+    /* INTRO SECTION */
+    #intro .cards {
+        display: flex;
+        flex-wrap: wrap;
+        /* Recupero gutters card */
+        margin-left: -.75rem;
+        margin-right: -.75rem;
+    }
+
+    #intro .card {
+        width: calc(33.333% - 1.5rem);
+        margin-left: 0.75rem;
+        margin-right: 0.75rem;
+        padding: 2rem 1.5rem;
+        font-size: 1.125rem;
+    }
+
+    #intro .card:first-child {
+        width: calc(66.666% - 1.5rem);
+    }
+
+    /* PLANNING SECTION */
+    #planning {
+        padding-top: 8rem;
+    }
+
+    #planning .title {
+        margin-top: 8rem;
+        font-size: 4.5rem;
+    }
+
+    #planning .card {
+        padding: 2rem;
+    }
+
+    /* TESTIMONIALS SECTION */
+    #testimonials .card {
+        display: flex;
+        align-items: center;
+    }
+
+    #testimonials .card-image {
+        flex-shrink: 0;
+        margin-right: 2rem;
+    }
+
+    #testimonials .card-contents {
+        flex-grow: 1;
+        text-align: left;
+    }
+
+    /* BENEFITS SECTION */
+    #benefits .cards {
+        display: flex;
+        flex-wrap: wrap;
+        /* Recupero gutters card */
+        margin-left: -1rem;
+        margin-right: -1rem;
+    }
+
+    #benefits .cards .card {
+        width: calc(50% - 2rem);
+        margin: 0 1rem 2rem;
+    }
+
+    #benefits .card-pre-title {
+        font-size: 4.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    /* ABOUT SECTION */
+    #about .columns {
+        display: flex;
+        /* adatta spaziatura su bordi con gutters colonne */
+        padding: 0 0 1rem;
+    }
+
+    #about .col:first-child,
+    #about .col:last-child {
+        margin: 0 2rem;
+    }
+    #about .col:first-child {
+        width: calc(60% - 4rem);
+    }
+    #about .col:last-child {
+        width: calc(40% - 4rem);
+    }
+
+    #about .section-title {
+        font-size: 4.5rem;
+    }
+
+    #about .quote-image {
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    /* BOTTOM BANNER SECTION */
+    #bottom-banner .title-two {
+        font-size: 3rem;
+    }
+
+    #bottom-banner .title-three {
+        font-size: 6rem;
+    }
+
+    #bottom-banner .text {
+        font-size: 1.125rem;
+    }
+
+    #bottom-banner .copy {
+        font-size: 1rem;
+    }
+
+    /* FOOTER */
+    .site-footer {
+        font-size: 1rem;
+    }
+}
+
+/* Desktop */
+@media all and (min-width: 992px) {
+    /* UTILITIES */
+    .container {
+        max-width: 940px;
+    }
+
+    .section-title {
+        font-size: 3rem;
+    }
+
+    /* HEADER */
+    .site-header .hamburger {
+        display: none;
+    }
+
+    .site-header .main-menu {
+        display: block;
+    }
+
+    .site-header .main-menu li {
+        list-style: none;
+        margin-left: 2rem;
+    }
+
+    .site-header .main-menu a {
+        text-decoration: none;
+        font-size: 1.125rem;
+    }
+
+    /* INTRO SECTION */
+    #intro .card:first-child {
+        display: flex;
+    }
+
+    #intro .card:first-child > * {
+        width: 50%;
+    }
+
+    #intro .card:first-child .image {
+        align-self: flex-end;
+        margin: 2rem auto 0;
+    }
+
+    /* PLANNING SECTION */
+    #planning .columns {
+        display: flex;
+    }
+
+    #planning .col {
+        width: calc(50% - 4rem);
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+
+    #planning .col:last-child {
+        align-self: flex-end;
+    }
+
+    #planning .title {
+        font-size: 2.125rem;
+    }
+
+    #planning .card-img {
+        max-width: 250px;
+    }
+
+    /* TESTIMONIALS SECTION */
+    #testimonials .card-image {
+        margin-right: 4rem;
+    }
+
+    /* BENEFITS SECTION */
+    #benefits .cards .card {
+        width: calc(100% / 3 - 2rem);
+        margin: 0 1rem 2rem;
+    }
+
+    /* ABOUT SECTION */
+    #about .col:first-child,
+    #about .col:last-child {
+        margin: 0 3rem;
+    }
+    #about .col:first-child {
+        width: calc(70% - 6rem);
+    }
+    #about .col:last-child {
+        width: calc(30% - 6rem);
+    }
+}
+
+/* Large Desktop */
+@media all and (min-width: 1200px) {
+    /* UTILITIES */
+    .container {
+        max-width: 1140px;
+    }
+
+    /* PLANNING SECTION */
+    #planning .columns {
+        max-width: 940px;
+    }
+
+    /* ABOUT SECTION */
+    #about .text p {
+        font-size: 1.25rem;
+    }
+
+    #about .quote-image .icon {
+        font-size: 18rem;
+    }
+}
